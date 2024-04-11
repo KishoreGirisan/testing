@@ -6,7 +6,8 @@ table, th, td {
 }
 </style>
 <body>
-
+def res = "${currentBuild.result}"
+def id = "${currentBuild.id}"
 <h2>A basic HTML table</h2>
 
 <table style="width:100%">
@@ -17,8 +18,8 @@ table, th, td {
   </tr>
   <tr>
     <td>Email Testing</td>
-    <td>res</td>
-    <td>id</td>
+    <td>${res}</td>
+    <td>${id}</td>
   </tr>
 </table>
 
