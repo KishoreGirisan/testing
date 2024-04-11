@@ -21,6 +21,7 @@ pipeline {
                     echo filecontents
                     emailext subject: "Hello - Testing",
                         mimeType: 'text/html',
+                        body: filecontents,
                         to: "teddy86working@gmail.com"
                 }
             }
