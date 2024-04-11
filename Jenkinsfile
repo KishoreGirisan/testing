@@ -17,10 +17,12 @@ pipeline {
             {
             script
                 {
-                   filecontents = readFile 'sample.html'
+                    def res = "${currentBuild.result}"
+                    echo res
+                    def id = "${currentBuild.id}"
+                    echo id
+                    filecontents = readFile 'sample.html'
                     echo filecontents
-                    echo "${currentBuild.result}"
-                    echo "${currentBuild.id}"
                     emailext subject: "Hello - Testing",
                         mimeType: 'text/html',
                         body: filecontents,
