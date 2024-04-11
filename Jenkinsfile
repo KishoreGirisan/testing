@@ -17,6 +17,8 @@ pipeline {
             {
             script
                 {
+                    writeFile encoding: 'utf8', file: 'sample.html', text: '''res=${currentbuild.status}
+                    id=${currentbuild.id}'''
                     filecontents = readFile 'sample.html'
                     echo filecontents
                     emailext subject: "Hello - Testing",
