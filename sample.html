@@ -1,3 +1,6 @@
+def res = "${env.BUILD_NUMBER}";
+def id = "${currentBuild.id}";
+
 <!DOCTYPE html>
 <html>
 <style>
@@ -6,10 +9,6 @@ table, th, td {
 }
 </style>
 <body>
-  <%
-  def res = "${env.BUILD_NUMBER}";
-  def id = "${currentBuild.id}";
-    %>
 <h2>A basic HTML table</h2>
 
 <table style="width:100%">
