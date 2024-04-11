@@ -17,10 +17,6 @@ pipeline {
             {
             script
                 {
-                    def res = "${currentBuild.result}"
-                    echo res
-                    def id = "${currentBuild.id}"
-                    echo id
                     filecontents = readFile 'sample.html'
                     echo filecontents
                     emailext subject: "Hello - Testing",
