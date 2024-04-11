@@ -16,14 +16,10 @@ pipeline {
                 {
                    filecontents = readFile 'sample.html'
                     echo filecontents
-                    emailext
-                    (
-                        subject: "Hello - Testing",
+                    emailext subject: "Hello - Testing",
                         mimeType: 'text/html',
                         to: "teddy86working@gmail.com"
-                    );
                 }
-            }
             }
         }
     }
