@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-               var test = readFile 'sample.html',
+               def test = readFile 'sample.html',
                 echo test
             }
         }
