@@ -19,6 +19,8 @@ pipeline {
                 {
                    filecontents = readFile 'sample.html'
                     echo filecontents
+                    echo "${currentBuild.result}"
+                    echo "${currentBuild.id}"
                     emailext subject: "Hello - Testing",
                         mimeType: 'text/html',
                         body: filecontents,
