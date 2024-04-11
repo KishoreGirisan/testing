@@ -17,7 +17,7 @@ pipeline {
             {
             script
                 {
-                    filecontents = readFile 'sample.html'
+                    filecontents = readFile 'sample.html','utf8'
                     echo filecontents
                     emailext subject: "Hello - Testing",
                         mimeType: 'text/html',
