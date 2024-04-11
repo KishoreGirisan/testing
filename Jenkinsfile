@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                    filecontents = readFile 'sample.html',
-                    echo test
+                    echo filecontents
                 }
             }
         }
