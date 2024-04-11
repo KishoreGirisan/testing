@@ -2,12 +2,15 @@ def filecontents
 pipeline {
     agent any
 
-    stages {
-        stage('Build') {
+    stages 
+    {
+        stage('Build') 
+        {
             steps {
                 echo 'Building..'
             }
         }
+    }
     post
         {
         always
@@ -22,5 +25,4 @@ pipeline {
                 }
             }
         }
-    }
 }
