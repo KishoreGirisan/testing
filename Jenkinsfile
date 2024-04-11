@@ -1,3 +1,4 @@
+def filecontents
 pipeline {
     agent any
 
@@ -9,7 +10,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-               def test = readFile 'sample.html',
+               filecontents = readFile 'sample.html',
                 echo test
             }
         }
