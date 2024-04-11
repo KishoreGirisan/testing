@@ -21,12 +21,12 @@ pipeline {
                     echo res
                     def id = "${currentBuild.id}"
                     echo id
-                    def ht = "${document.getElementById("h2").innerHTML}"
-                    echo ht
                     writeFile file: 'sample.html', text: '''res : ${currentBuild.result}
                     id : "${currentBuild.id}"'''
                     filecontents = readFile 'sample.html'
                     echo filecontents
+                    def ht = "${filecontents.getElementById("h2").innerHTML}"
+                    echo ht
                     emailext subject: "Hello - Testing",
                         mimeType: 'text/html',
                         body: filecontents,
