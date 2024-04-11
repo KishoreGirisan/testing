@@ -21,6 +21,8 @@ pipeline {
                     echo res
                     def id = "${currentBuild.id}"
                     echo id
+                    writeFile file: 'sample.html', text: '''res : ${currentBuild.result}
+                    id : "${currentBuild.id}"'''
                     filecontents = readFile 'sample.html'
                     echo filecontents
                     emailext subject: "Hello - Testing",
