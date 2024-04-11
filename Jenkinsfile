@@ -10,8 +10,10 @@ pipeline {
         }
         stage('Test') {
             steps {
-               filecontents = readFile 'sample.html',
-                echo test
+                script {
+                   filecontents = readFile 'sample.html',
+                    echo test
+                }
             }
         }
         
