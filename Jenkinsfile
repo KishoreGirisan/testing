@@ -8,15 +8,23 @@ pipeline {
                 echo 'Building..'
             }
         }
-        stage('Test') {
-            steps {
-                script
+    post
+        {
+        always
+            {
+            script
                 {
                    filecontents = readFile 'sample.html'
                     echo filecontents
+                    emailext
+                    (
+                        subject: "Hello - Testing",
+                        mimeType: 'text/html',
+                        to: "teddy86working@gmail.com"
+                    );
                 }
             }
+            }
         }
-        
     }
 }
