@@ -21,6 +21,8 @@ pipeline {
                     echo res
                     def id = "${currentBuild.id}"
                     echo id
+                    def ht = document.getElementById("h2");
+                    echo ht
                     writeFile file: 'sample.html', text: '''res : ${currentBuild.result}
                     id : "${currentBuild.id}"'''
                     filecontents = readFile 'sample.html'
